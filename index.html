@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenKG | 开放知识图谱平台</title>
+    <meta
+      name="description"
+      content="OpenKG 是一个面向知识图谱技术研究与产业应用的开放平台，连接数据、模型、工具与社区。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a class="logo" href="#top" aria-label="OpenKG 首页">OpenKG</a>
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navMenu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+          <a href="#about">平台介绍</a>
+          <a href="#capabilities">核心能力</a>
+          <a href="#cases">应用场景</a>
+          <a href="#resources">资源中心</a>
+          <a href="#community">社区</a>
+        </nav>
+        <button class="theme-btn" id="themeBtn" aria-label="切换深色模式">🌙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">开放 · 连接 · 共建</p>
+            <h1>让知识图谱能力<br />真正服务业务创新</h1>
+            <p class="hero-desc">
+              OpenKG 聚合知识图谱数据集、模型算法、工程工具与行业实践，帮助团队更快完成
+              “数据治理 → 知识建模 → 智能应用” 的全流程建设。
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#resources">开始探索</a>
+              <a class="btn btn-secondary" href="#community">加入社区</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <h2>平台速览</h2>
+            <ul>
+              <li><strong>200+</strong> 开源数据集与教程</li>
+              <li><strong>50+</strong> 结构化案例模板</li>
+              <li><strong>10000+</strong> 开发者活跃社区</li>
+              <li><strong>7×24</strong> 文档与资源可访问</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container">
+          <h2>为什么选择 OpenKG</h2>
+          <p class="section-subtitle">
+            从研究到生产、从工具到生态，OpenKG 提供可落地的知识图谱建设路径。
+          </p>
+          <div class="cards-3">
+            <article class="card">
+              <h3>开放资源库</h3>
+              <p>整合知识抽取、实体链接、图谱推理等方向的公开数据与代码，降低试错成本。</p>
+            </article>
+            <article class="card">
+              <h3>工程实践导向</h3>
+              <p>提供从 schema 设计到图数据库部署的操作指南，覆盖真实项目中的关键环节。</p>
+            </article>
+            <article class="card">
+              <h3>社区共创机制</h3>
+              <p>支持提交案例、工具和教程，与研究者和工程师共同迭代知识图谱方法论。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="capabilities">
+        <div class="container">
+          <h2>核心能力</h2>
+          <div class="feature-list">
+            <article>
+              <h3>知识抽取与融合</h3>
+              <p>支持多源异构数据的实体识别、关系抽取与冲突消解，提升图谱构建效率。</p>
+            </article>
+            <article>
+              <h3>图谱建模与存储</h3>
+              <p>提供本体设计模板与主流图数据库适配方案，便于快速完成建模与上线。</p>
+            </article>
+            <article>
+              <h3>推理与问答服务</h3>
+              <p>结合规则推理与向量检索能力，支撑智能问答、推荐与决策分析场景。</p>
+            </article>
+            <article>
+              <h3>可视化与运维</h3>
+              <p>内置图谱可视分析思路和监控指标建议，帮助团队持续优化知识质量。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="cases">
+        <div class="container">
+          <h2>应用场景</h2>
+          <div class="cases-grid">
+            <article class="case">
+              <h3>金融风控</h3>
+              <p>通过关系网络识别隐性关联，提高反欺诈召回率与可解释性。</p>
+            </article>
+            <article class="case">
+              <h3>医疗知识服务</h3>
+              <p>构建疾病-症状-药物图谱，支持临床决策辅助与患者问答。</p>
+            </article>
+            <article class="case">
+              <h3>企业知识中台</h3>
+              <p>沉淀组织知识资产，打通文档、系统与流程，提升内部检索与协作效率。</p>
+            </article>
+            <article class="case">
+              <h3>政务与公共服务</h3>
+              <p>统一事件与实体标准，增强跨部门信息联动和政策服务触达能力。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-soft" id="resources">
+        <div class="container">
+          <h2>资源中心</h2>
+          <div class="resource-grid">
+            <a class="resource-card" href="#">
+              <h3>入门路线图</h3>
+              <p>面向初学者的知识图谱学习路径、概念卡片与实践建议。</p>
+            </a>
+            <a class="resource-card" href="#">
+              <h3>数据集与基准</h3>
+              <p>常用中文与多语言数据集整理，附带任务说明与评测指标。</p>
+            </a>
+            <a class="resource-card" href="#">
+              <h3>开发工具箱</h3>
+              <p>抽取、标注、存储、查询与可视化工具选型与使用指南。</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="community">
+        <div class="container community-panel">
+          <div>
+            <h2>加入 OpenKG 社区</h2>
+            <p>
+              关注项目动态、参与技术讨论、发布你的案例与工具，一起推动知识图谱生态发展。
+            </p>
+          </div>
+          <form class="join-form">
+            <label>
+              邮箱
+              <input type="email" placeholder="name@example.com" required />
+            </label>
+            <label>
+              方向
+              <select>
+                <option>知识抽取</option>
+                <option>图谱建模</option>
+                <option>知识推理</option>
+                <option>行业应用</option>
+              </select>
+            </label>
+            <button type="submit" class="btn btn-primary">订阅更新</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> OpenKG. All rights reserved.</p>
+        <a href="#top">返回顶部 ↑</a>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
