@@ -33,10 +33,13 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        run: npm run build:dist
 
       - name: Add .nojekyll
         run: touch dist/.nojekyll
+
+      - name: Add SPA 404 fallback
+        run: cp dist/index.html dist/404.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

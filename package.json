@@ -5,9 +5,10 @@
   "type": "module",
   "description": "OpenKG 开放知识图谱新版官方网站 - 大模型时代的知识工程社区",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173"
+    "dev": "vite --config web/vite.config.js",
+    "build": "vite build --config web/vite.config.js && node scripts/deploy-root.mjs",
+    "build:dist": "vite build --config web/vite.config.js",
+    "preview": "vite preview --config web/vite.config.js --port 4173"
   },
   "dependencies": {
     "vue": "^3.5.13",

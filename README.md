@@ -63,10 +63,11 @@
 ## 本地开发
 
 ```bash
-npm install     # 安装依赖
-npm run dev     # 启动开发服务器（默认 http://localhost:5173）
-npm run build   # 生产构建（输出到 dist/）
-npm run preview # 预览构建产物（http://localhost:4173）
+npm install        # 安装依赖
+npm run dev        # 启动开发服务器（默认 http://localhost:5173）
+npm run build      # 生产构建 + 同步到仓库根目录（用于 GitHub Pages）
+npm run build:dist # 仅构建到 dist/（不同步根目录）
+npm run preview    # 预览构建产物（http://localhost:4173）
 ```
 
 要求：**Node.js 18+**（推荐 Node 20）。
@@ -74,29 +75,25 @@ npm run preview # 预览构建产物（http://localhost:4173）
 ## 目录结构
 
 ```
-src/
-├─ components/         # 通用组件（Header / Footer / 卡片 / 背景）
-│   ├─ SiteHeader.vue
-│   ├─ SiteFooter.vue
-│   ├─ StarfieldBackground.vue
-│   ├─ KnowledgeOrb.vue
-│   ├─ ProjectCard.vue
-│   ├─ ProjectGlyph.vue
-│   └─ PageHeader.vue
-├─ views/              # 页面级视图
-│   ├─ HomeView.vue
-│   ├─ ProjectsView.vue
-│   ├─ ProjectDetailView.vue
-│   ├─ SigsView.vue
-│   ├─ TocView.vue
-│   ├─ ResourcesView.vue
-│   ├─ NewsView.vue
-│   └─ AboutView.vue
-├─ data/site.js        # 单一数据源（核心项目 / SIG / 发起人 / 新闻 / 历程）
-├─ router/index.js
-├─ styles/global.scss  # 全局主题与动画
-├─ App.vue
-└─ main.js
+仓库根/
+├─ index.html              # 构建后的入口（GitHub Pages 服务）
+├─ assets/                 # 构建产物
+├─ favicon.svg, .nojekyll, 404.html
+│
+├─ web/                    # 源代码目录
+│   ├─ index.html          # Vite 模板
+│   ├─ vite.config.js
+│   └─ src/
+│       ├─ components/     # Header / Footer / 粒子背景 / 知识球体 / 卡片
+│       ├─ views/          # 7 个页面（含项目详情动态路由）
+│       ├─ data/site.js    # 单一数据源
+│       ├─ router/         # Hash 路由
+│       ├─ styles/         # 全局主题与动画
+│       ├─ App.vue
+│       └─ main.js
+│
+├─ scripts/deploy-root.mjs # 把 dist/ 同步到仓库根目录
+└─ .github/workflows/      # GitHub Actions 自动构建部署
 ```
 
 ## 路由
@@ -105,9 +102,20 @@ src/
 
 ## 部署
 
-`npm run build` 生成的 `dist/` 目录可直接部署至任意静态托管平台：
+### GitHub Pages（已配置）
 
-- GitHub Pages
+仓库根目录直接包含构建产物（`index.html` + `assets/`），所以 GitHub Pages 可以**直接以源分支根目录作为 Source** 服务。
+
+> 我们采用"源代码放 `web/`，构建产物输出到根目录"的布局，避免了 GitHub Pages 把开发模式的 `index.html`（含 `import "/src/main.js"` 这类裸模块导入）当作静态文件直接派发，从而出现白屏。
+
+构建完成后会自动：
+- 把 `dist/index.html`、`dist/assets/`、`favicon.svg`、`.nojekyll`、`404.html` 复制到仓库根
+- 让 GitHub Pages 直接服务生产产物
+
+### 其他平台
+
+`dist/` 目录可直接部署至：
+
 - 阿里云 OSS / 腾讯云 COS
 - Netlify / Vercel
 - Nginx / Apache
