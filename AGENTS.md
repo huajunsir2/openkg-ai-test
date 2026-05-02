@@ -26,4 +26,5 @@ Standard npm scripts defined in `package.json`:
 - **No linter or TypeScript** configured. `npm run build` is the primary validation step.
 - **No automated tests** exist in this project.
 - The dev server binds to `0.0.0.0:5173` (configured in `vite.config.js`), so it is accessible from outside the container.
-- Node.js 18+ is required (20 recommended). The VM environment may not have Node.js pre-installed; the update script handles this via nodesource.
+- Node.js 18+ is required (20 recommended). The update script ensures Node.js 20 is available.
+- Since there are no linter or test commands, use `npm run build` as the primary check before committing changes.
